@@ -11,14 +11,19 @@ const TaskFilter: React.FC<ITaskFilterProps> = ({ onChangeFilter }) => {
   const [currentFilter, setCurrentFilter] = useState<string>('All');
 
   const changeFilterHandler = (event: React.SyntheticEvent) => {
-    setCurrentFilter(event.target.innerText);
-    onChangeFilter(event.target.innerText);
+    setCurrentFilter(event.target.value);
+    onChangeFilter(event.target.value);
   };
 
   const filterItems = ['All', 'Active', 'Completed'].map((elem) => {
     return (
       <li key={elem}>
-        <button type="button" className={elem === currentFilter ? 'selected' : ''} onClick={changeFilterHandler}>
+        <button
+          type="button"
+          className={elem === currentFilter ? 'selected' : ''}
+          value={elem}
+          onClick={changeFilterHandler}
+        >
           {elem}
         </button>
       </li>
