@@ -1,0 +1,36 @@
+.timer {
+  position: absolute;
+  right: -24.5%;
+  z-index: -1;
+  width: 120px;
+  height: 100%;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+
+  & button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  &-count {
+    width: 60px;
+    height: 19px;
+  }
+}
+
+.todo-list li .timer-play {
+  background: url(./play.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.todo-list li .timer-pause {
+  background: url(./pause.svg) no-repeat center center;
+  background-size: contain;
+}
