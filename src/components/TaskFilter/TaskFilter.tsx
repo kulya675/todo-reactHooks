@@ -11,8 +11,9 @@ const TaskFilter: React.FC<ITaskFilterProps> = ({ onChangeFilter }) => {
   const [currentFilter, setCurrentFilter] = useState<string>('All');
 
   const changeFilterHandler = (event: React.SyntheticEvent) => {
-    setCurrentFilter(event.target.value);
-    onChangeFilter(event.target.value);
+    const { value } = event.target as HTMLButtonElement;
+    setCurrentFilter(value);
+    onChangeFilter(value);
   };
 
   const filterItems = ['All', 'Active', 'Completed'].map((elem) => {
