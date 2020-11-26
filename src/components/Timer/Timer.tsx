@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
@@ -13,6 +13,12 @@ interface ITimerProps {
 
 const Timer: React.FC<ITimerProps> = ({ id, time, onPlayTimer, onPauseTimer }) => {
   const timerValue = format(time, 'mm:ss');
+
+  useEffect(() => {
+    return () => {
+      onPauseTimer(id);
+    };
+  });
 
   return (
     <div className="timer">
